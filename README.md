@@ -1,4 +1,4 @@
-# 🪄 ThreeJs Practice
+# 🪄 ShirtCraft 3D
 
 **Transform your creativity into reality with the 3D Shirt Customizer!**
 
@@ -25,7 +25,7 @@
 
 ## Features
 
-- **🎨 3D Swag Generation**: Generate unique 3D shirts dynamically, allowing users to explore endless possibilities.
+- **🎨 3D Shirt Generation**: Generate unique 3D shirts dynamically, allowing users to explore endless possibilities.
 - **🌈 Color Customization**: Apply any color to the 3D shirt for a personalized look and feel.
 - **📂 Logo Upload Functionality**: Upload any file as a logo and integrate it seamlessly onto the 3D shirt.
 - **🖼️ Texture Image Upload**: Upload texture images to style the 3D shirt with favorite designs.
