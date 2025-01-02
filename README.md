@@ -1,4 +1,4 @@
-# 🪄 ShirtCraft 3D
+# 🪄 [ShirtCraft 3D](https://www.linkedin.com/in/yashbhatt30/)
 
 **Transform your creativity into reality with the 3D Shirt Customizer!**
 
@@ -20,6 +20,8 @@
 ## Overview
 
 **A feature-packed 3D shirt customization application built with React and Three.js, featuring AI-powered enhancements, dynamic animations, and seamless responsiveness.**
+
+####Deplyed Link: [Site](https://www.linkedin.com/in/yashbhatt30/)
 
 ---
 
