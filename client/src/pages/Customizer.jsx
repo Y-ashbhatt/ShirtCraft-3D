@@ -21,7 +21,7 @@ const Customizer = () => {
 
   const [file, setFile] = useState("");
 
-  const [promt, setPromt] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState("");
@@ -40,8 +40,8 @@ const Customizer = () => {
       case "aipicker":
         return (
           <AIPicker
-            propmt={propmt}
-            setPromt={setPromt}
+            prompt={prompt}
+            setPrompt={setPrompt}
             generatingImg={generatingImg}
             handleSubmit={handleSubmit}
           />
@@ -52,12 +52,45 @@ const Customizer = () => {
   };
 
   const handleSubmit = async (type) => {
-    if (!promt) return alert("Please enter a prompt");
+    if (!prompt) return alert("Please enter a prompt");
+
+    // Call the Backend to Generate Ai image
+    setGeneratingImg(true);
+
+    // Function to query the Hugging Face API
+    async function query(data) {
+      const response = await fetch(
+        "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev",
+        {
+          headers: {
+            Authorization: `Bearer   ${
+              import.meta.env.VITE_HUGGINGFACE_API_KEY
+            }`,
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(data),
+        }
+      );
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to generate the image");
+      }
+      return response.blob(); // Assuming binary blob is returned
+    }
 
     try {
-      // Call the Backend to Generate Ai image
+      const blob = await query({ inputs: prompt });
+
+      // Convert blob to Base64
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Data = reader.result; // Base64-encoded image
+        handleDecals(type, base64Data);
+      };
+      reader.readAsDataURL(blob);
     } catch (error) {
-      alert(error);
+      console.error("Error:", error);
     } finally {
       setGeneratingImg(false);
       setActiveEditorTab("");
@@ -154,6 +187,14 @@ const Customizer = () => {
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
+            {/* Download button */}
+            <button className="download-btn" onClick={downloadCanvasToImage}>
+              <img
+                src={download}
+                alt="download_image"
+                className="w-3/5 h-3/5 object-contain"
+              />
+            </button>
           </motion.div>
         </>
       )}
