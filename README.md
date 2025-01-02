@@ -21,7 +21,7 @@
 
 **A feature-packed 3D shirt customization application built with React and Three.js, featuring AI-powered enhancements, dynamic animations, and seamless responsiveness.**
 
-####Deplyed Link: [Site](https://www.linkedin.com/in/yashbhatt30/)
+#### Deplyed Link: [Site](https://y-ashbhatt.github.io/ShirtCraft-3D/)
 
 ---
 
