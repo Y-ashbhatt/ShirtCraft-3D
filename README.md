@@ -129,4 +129,4 @@ Users can:
 
 - **Name**: Yash Bhatt
 - **GitHub**: [@Y-ashbhatt](https://github.com/Y-ashbhatt)
-- **LinkedIn**: [Yash Bhatt](https://www.linkedin.com/in/yash-bhatt/)
+- **LinkedIn**: [Yash Bhatt](https://www.linkedin.com/in/yashbhatt30/)
