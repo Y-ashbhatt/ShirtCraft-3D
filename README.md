@@ -29,7 +29,7 @@
 - **🌈 Color Customization**: Apply any color to the 3D shirt for a personalized look and feel.
 - **📂 Logo Upload Functionality**: Upload any file as a logo and integrate it seamlessly onto the 3D shirt.
 - **🖼️ Texture Image Upload**: Upload texture images to style the 3D shirt with favorite designs.
-- **🤖 AI-Generated Logos**: Utilize OpenAI to generate logos and intelligently apply them to the 3D shirt.
+- **🤖 AI-Generated Logos**: Utilize the **black-forest-labs/FLUX.1-dev** model from Hugging Face to generate logos and intelligently apply them to the 3D shirt.
 - **🎨 AI-Generated Textures**: Leverage AI to create custom textures for enhanced 3D customization.
 - **📦 Download Options**: Download customized shirts for sharing or printing.
 - **🌐 Theme Change with Color Selection**: Dynamically adjust the application theme based on the selected color for an immersive experience.
@@ -48,11 +48,8 @@
   - React Three Drei
   - Vite
   - Tailwind CSS
-- **Backend**:
-  - Node.js
-  - Express.js
 - **Additional Libraries & Tools**:
-  - OpenAI
+  - Hugging Face API (using the **black-forest-labs/FLUX.1-dev** model)
   - Framer Motion
   - Valtio
 
@@ -63,7 +60,7 @@
 Users can:
 
 - Customize 3D shirts with colors, logos, and textures.
-- Generate AI-powered logos and textures for personalization.
+- Generate AI-powered logos and textures for personalization using Hugging Face's **black-forest-labs/FLUX.1-dev** model.
 - Seamlessly interact with a responsive interface across devices.
 
 ---
@@ -71,7 +68,7 @@ Users can:
 ## What I Learned
 
 - **3D Rendering**: Gained hands-on experience with Three.js and React Three Fiber for advanced rendering.
-- **AI Integration**: Implemented AI-powered features for real-time customization.
+- **AI Integration**: Integrated Hugging Face's **black-forest-labs/FLUX.1-dev** model for real-time logo and texture generation.
 - **Dynamic Design**: Enhanced understanding of responsive design and animations with Tailwind CSS and Framer Motion.
 - **Code Efficiency**: Improved skills in creating reusable components for scalability.
 
@@ -83,30 +80,40 @@ Users can:
 
 - Node.js (v16 or higher)
 - npm or yarn
+- Hugging Face API key for **black-forest-labs/FLUX.1-dev** model
 
 ### Steps
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/3d-shirt-customizer.git
    cd 3d-shirt-customizer
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
    yarn install
    ```
 
-3. Start the development server:
+3. Create a `.env` file in the root directory and add your Hugging Face API key for the **black-forest-labs/FLUX.1-dev** model:
+
+   ```
+   VITE_HUGGINGFACE_API_KEY=your_api_key_here
+   ```
+
+4. Start the development server:
+
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-4. Open the application in your browser at `http://localhost:3000`.
+5. Open the application in your browser at `http://localhost:3000`.
 
 ---
 
@@ -123,4 +130,3 @@ Users can:
 - **Name**: Yash Bhatt
 - **GitHub**: [@Y-ashbhatt](https://github.com/Y-ashbhatt)
 - **LinkedIn**: [Yash Bhatt](https://www.linkedin.com/in/yash-bhatt/)
-
